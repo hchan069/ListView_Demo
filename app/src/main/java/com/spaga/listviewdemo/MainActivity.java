@@ -20,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
         ListView myListView = findViewById(R.id.myListView);
         final ArrayList<String> myFriends = new ArrayList<>();
+        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this,
+                android.R.layout.simple_list_item_1, myFriends);
+        myListView.setAdapter(arrayAdapter);
 
         myFriends.add("My Left Hand");
         myFriends.add("My Right Hand");
