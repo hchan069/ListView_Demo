@@ -21,10 +21,15 @@ public class MainActivity extends AppCompatActivity {
         ListView myListView = findViewById(R.id.myListView);
         final ArrayList<String> myFriends = new ArrayList<>();
 
+        myFriends.add("My Left Hand");
+        myFriends.add("My Right Hand");
+        myFriends.add("My Left Foot");
+        myFriends.add("My Right Foot");
+
         myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, myFriends.get(i), Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, myFriends.get(i), Toast.LENGTH_LONG).show();
             }
         });
     }
