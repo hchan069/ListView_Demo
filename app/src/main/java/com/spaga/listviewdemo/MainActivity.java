@@ -24,5 +24,6 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, myNames);
 
         myListView.setAdapter(arrayAdapter);
+        // test
     }
 }
