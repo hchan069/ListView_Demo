@@ -2,6 +2,9 @@ package com.spaga.listviewdemo;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -15,7 +18,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         ListView myListView = findViewById(R.id.myListView);
-        ArrayList<String> myNames = new ArrayList<>();
+        final ArrayList<String> myNames = new ArrayList<>();
         myNames.add("John");
         myNames.add("Mary");
         myNames.add("Paul");
@@ -24,6 +27,12 @@ public class MainActivity extends AppCompatActivity {
                 android.R.layout.simple_list_item_1, myNames);
 
         myListView.setAdapter(arrayAdapter);
-        // test
+
+        myListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Log.i("Person tapped ", myNames.get(i));
+            }
+        });
     }
 }
